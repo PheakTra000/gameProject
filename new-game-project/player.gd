@@ -11,7 +11,7 @@ func _ready():
 func _on_body_entered(body):
 	hide() # player disappear after being hit
 	hit.emit()
-	#
+	#daw
 	$CollisionShape2d.set_deferred("disabled", true)
 	
 func start(pos):
@@ -41,10 +41,9 @@ func _process(delta):
 	
 	if velocity.x != 0:
 		$AnimatedSprite2D2.animation = "walk"
-		#$AnimatedSprite2D2.flip_v = false
+		$AnimatedSprite2D2.flip_v = false
 		
 		$AnimatedSprite2D2.flip_h = velocity.y < 0
 	elif velocity.y != 0:
-		#$AnimatedSprite2D2.animation = "up"
+		$AnimatedSprite2D2.animation = "up"
 		$AnimatedSprite2D2.flip_v = velocity.y > 0
-		
